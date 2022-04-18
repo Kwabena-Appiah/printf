@@ -1,5 +1,5 @@
 ./"This is the manpage of the _printf project in Holberton School
-.TH _PRINTF 3 "29 October 2019" "0.10" "_printf man page"
+.TH _PRINTF 3 "19 04 2022" "0.10" "_printf man page"
 
 .SH NAME
 .B _printf
@@ -55,4 +55,4 @@ returns the number of printed characters.
 .SH BUGS
 No known bugs.
 .SH AUTHOR
-Taieb Chaabini, Mariem Matri
+Kwabena Appiah and Nii Kpakpo Brown
