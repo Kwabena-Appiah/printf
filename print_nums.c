@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * print_int - prints an integer
+ * print_int - prints an integer given to it
  * @l: va_list of arguments from _printf
  * @f: pointer to the struct flags determining
  * if a flag is passed to _printf
- * Return: number of char printed
+ * Return: number of chars printed
  */
 int print_int(va_list l, flags_t *f)
 {
@@ -23,7 +23,7 @@ int print_int(va_list l, flags_t *f)
 }
 
 /**
- * print_unsigned - prints an unsigned integer
+ * print_unsigned - prints an unsigned integer given to it
  * @l: va_list of arguments from _printf
  * @f: pointer to the struct flags determining
  * if a flag is passed to _printf
