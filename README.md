@@ -1,4 +1,5 @@
 Tasks
+
 These are all the tasks of this project
 
 0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life
@@ -68,5 +69,5 @@ r : prints the reversed string
 Handle the following custom conversion specifier:
 R : prints the rot13'ed string
 
-[16. * ]
+[16]
 All the above options work well together.
