@@ -40,9 +40,16 @@ Functions in file (fn_uoxX.c) :
 
 
 File Descriptions
+
 _printf.c: - contains the _printf function, which uses the prototype int _printf(const char *format, ...);.The format string is composed of zero or more directives. See man 3 printf for more detail. _printf will return the number of characters printed (excluding the null byte used to end output to strings) and will write output to stdout, the standard output stream.
+
 _putchar.c: - contains the function _putchar, which writes a character to stdout.
+
 main.h: - contains all function prototypes used for _printf.
+
 man_3_printf: - manual page for the custom _printf function.
-fn_char.c: - contains the functions print_char, print_string, print_porc, and print_rev which handle the conversion specifiers c, s, %, and r, respectively, as well as print_bin, which prints binary numbers.
-getspecifier.c: - wich contains the structure array to find the function that the program needs to execute for each format.
+
+fn_char.c: - contains the functions print_char, print_string, print_porc, and print_rev which handle the conversion specifiers c, s, %, and r, respectively, as well as
+print_bin, which prints binary numbers.
+
+getspecifier.c: - which contains the structure array to find the function that the program needs to execute for each format.
