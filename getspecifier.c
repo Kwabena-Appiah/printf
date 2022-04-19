@@ -1,51 +1,38 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdarg.h>
-#include <stdlib.h>
 /**
-* getspecifier - finds the function for the specifier
-* @format: pointer to our string
-* @i: index of our potential specifier
-* Return: pointer to function
-*/
-int(*getspecifier(const char *format, int i))(va_list)
+ * get_print - selects the right printing function
+ * depending on the conversion specifier passed to _printf
+ * @s: character that holds the conversion specifier
+ * Description: the function loops through the structs array
+ * func_arr[] to find a match between the specifier passed to _printf
+ * and the first element of the struct, and then the approriate
+ * printing function
+ * Return: a pointer to the matching printing function
+ */
+int (*get_print(char s))(va_list, flags_t *)
 {
-int k;
-mystr p[] = {
-{"c", print_c},
-{"s", print_s},
-{"S", print_S},
-{"p", _print_p},
-{"i", _print_i},
-{"d", _print_i},
-{"b", _print_b},
-{"u", _print_u},
-{"o", _print_o},
-{"x", _print_x},
-{"X", _print_X},
-{"r", print_rs},
-{"R", print_rot},
-{NULL, NULL}
-};
-mystr flags[] = {
-{"+d", _plus_i},
-{"+i", _plus_i},
-{" d", _space_i},
-{" i", _space_i},
-{"#o", _diez_o},
-{"#x", _diez_x},
-{"#X", _diez_X},
-{NULL, NULL}
-};
-for (k = 0; p[k].letter; k++)
-{
-if (p[k].letter[0] == format[i])
-return (p[k].func);
-}
-for (k = 0; flags[k].letter; k++)
-{
-if (flags[k].letter[0] == format[i] && flags[k].letter[1] == format[i + 1])
-return (flags[k].func);
-}
-return (0);
+	ph func_arr[] = {
+		{'i', print_int},
+		{'s', print_string},
+		{'c', print_char},
+		{'d', print_int},
+		{'u', print_unsigned},
+		{'x', print_hex},
+		{'X', print_hex_big},
+		{'b', print_binary},
+		{'o', print_octal},
+		{'R', print_rot13},
+		{'r', print_rev},
+		{'S', print_bigS},
+		{'p', print_address},
+		{'%', print_percent}
+	};
+	int flags = 14;
+
+	register int i;
+
+	for (i = 0; i < flags; i++)
+		if (func_arr[i].c == s)
+			return (func_arr[i].f);
+	return (NULL);
 }
